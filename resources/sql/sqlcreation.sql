@@ -38,7 +38,7 @@ DROP TABLE IF EXISTS `runways`;
 --
 
 CREATE TABLE `airports` (
-  `id` int(11) NOT NULL,
+  `id` bigint(20) NOT NULL,
   `ident` char(10) COLLATE latin1_general_ci DEFAULT NULL,
   `type` char(20) COLLATE latin1_general_ci DEFAULT NULL,
   `name` char(100) COLLATE latin1_general_ci DEFAULT NULL,

@@ -3,29 +3,19 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Erstellungszeit: 17. Jul 2021 um 18:57
+-- Erstellungszeit: 19. Jul 2021 um 21:52
 -- Server-Version: 10.3.30-MariaDB-1:10.3.30+maria~focal
 -- PHP-Version: 7.4.21
-
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
 SET time_zone = "+00:00";
 
 
-
-DROP TABLE IF EXISTS `airport_frequencies`;
-DROP TABLE IF EXISTS `airports`;
-DROP TABLE IF EXISTS `countries`;
-DROP TABLE IF EXISTS `navaids`;
-DROP TABLE IF EXISTS `regions`;
-DROP TABLE IF EXISTS `runways`;
-
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
 /*!40101 SET NAMES utf8mb4 */;
-
 
 --
 -- Datenbank: `airports`
@@ -37,6 +27,7 @@ DROP TABLE IF EXISTS `runways`;
 -- Tabellenstruktur für Tabelle `airports`
 --
 
+DROP TABLE IF EXISTS `airports`;
 CREATE TABLE `airports` (
   `id` bigint(20) NOT NULL,
   `ident` char(10) COLLATE latin1_general_ci DEFAULT NULL,
@@ -64,6 +55,7 @@ CREATE TABLE `airports` (
 -- Tabellenstruktur für Tabelle `airport_frequencies`
 --
 
+DROP TABLE IF EXISTS `airport_frequencies`;
 CREATE TABLE `airport_frequencies` (
   `id` int(11) NOT NULL,
   `airport_ref` int(11) DEFAULT NULL,
@@ -79,6 +71,7 @@ CREATE TABLE `airport_frequencies` (
 -- Tabellenstruktur für Tabelle `countries`
 --
 
+DROP TABLE IF EXISTS `countries`;
 CREATE TABLE `countries` (
   `id` int(11) NOT NULL,
   `code` char(2) COLLATE latin1_general_ci DEFAULT NULL,
@@ -94,7 +87,9 @@ CREATE TABLE `countries` (
 -- Tabellenstruktur für Tabelle `navaids`
 --
 
+DROP TABLE IF EXISTS `navaids`;
 CREATE TABLE `navaids` (
+  `id` int(11) NOT NULL,
   `filename` char(100) COLLATE latin1_general_ci DEFAULT NULL,
   `ident` char(4) COLLATE latin1_general_ci DEFAULT NULL,
   `name` char(100) COLLATE latin1_general_ci DEFAULT NULL,
@@ -109,8 +104,8 @@ CREATE TABLE `navaids` (
   `dme_latitude_deg` char(10) COLLATE latin1_general_ci DEFAULT NULL,
   `dme_longitude_deg` char(10) COLLATE latin1_general_ci DEFAULT NULL,
   `dme_elevation_ft` int(11) DEFAULT NULL,
-  `slaved_variation_deg` int(11) DEFAULT NULL,
-  `magnetic_variation_deg` int(11) DEFAULT NULL,
+  `slaved_variation_deg` char(20) COLLATE latin1_general_ci DEFAULT NULL,
+  `magnetic_variation_deg` char(20) COLLATE latin1_general_ci DEFAULT NULL,
   `usageType` char(10) COLLATE latin1_general_ci DEFAULT NULL,
   `power` char(10) COLLATE latin1_general_ci DEFAULT NULL,
   `associated_airport` char(10) COLLATE latin1_general_ci DEFAULT NULL
@@ -122,6 +117,7 @@ CREATE TABLE `navaids` (
 -- Tabellenstruktur für Tabelle `regions`
 --
 
+DROP TABLE IF EXISTS `regions`;
 CREATE TABLE `regions` (
   `id` int(11) NOT NULL,
   `code` char(10) COLLATE latin1_general_ci DEFAULT NULL,
@@ -139,6 +135,7 @@ CREATE TABLE `regions` (
 -- Tabellenstruktur für Tabelle `runways`
 --
 
+DROP TABLE IF EXISTS `runways`;
 CREATE TABLE `runways` (
   `id` int(11) NOT NULL,
   `airport_ref` int(11) DEFAULT NULL,
@@ -151,14 +148,14 @@ CREATE TABLE `runways` (
   `le_ident` char(10) COLLATE latin1_general_ci DEFAULT NULL,
   `le_latitude_deg` char(10) COLLATE latin1_general_ci DEFAULT NULL,
   `le_longitude_deg` char(10) COLLATE latin1_general_ci DEFAULT NULL,
-  `le_elevation_ft` int(11) DEFAULT NULL,
-  `le_heading_degT` int(11) DEFAULT NULL,
+  `le_elevation_ft` char(11) COLLATE latin1_general_ci DEFAULT NULL,
+  `le_heading_degT` char(11) COLLATE latin1_general_ci DEFAULT NULL,
   `le_displaced_threshold_ft` int(11) DEFAULT NULL,
   `he_ident` char(10) COLLATE latin1_general_ci DEFAULT NULL,
   `he_latitude_deg` char(10) COLLATE latin1_general_ci DEFAULT NULL,
   `he_longitude_deg` char(10) COLLATE latin1_general_ci DEFAULT NULL,
   `he_elevation_ft` int(11) DEFAULT NULL,
-  `he_heading_degT` int(11) DEFAULT NULL,
+  `he_heading_degT` char(11) COLLATE latin1_general_ci DEFAULT NULL,
   `he_displaced_threshold_ft` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
 
@@ -187,6 +184,12 @@ ALTER TABLE `airport_frequencies`
 ALTER TABLE `countries`
   ADD PRIMARY KEY (`id`),
   ADD KEY `code` (`code`);
+
+--
+-- Indizes für die Tabelle `navaids`
+--
+ALTER TABLE `navaids`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indizes für die Tabelle `regions`

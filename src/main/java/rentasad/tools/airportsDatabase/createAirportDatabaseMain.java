@@ -7,9 +7,9 @@ import java.util.List;
 
 import com.opencsv.exceptions.CsvException;
 
+import rentasad.library.basicTools.DownloadAirportFilesModul;
 import rentasad.library.configFileTool.ConfigFileToolException;
 import rentasad.library.db.sqlExecutionTool.SqlExecutionToolException;
-import rentasad.library.tools.exceptions.guiExceptions.AlertException;
 import rentasad.tools.airportsDatabase.objects.AirportFrequenciesObjects;
 import rentasad.tools.airportsDatabase.objects.AirportsObject;
 import rentasad.tools.airportsDatabase.objects.CountriesObject;
@@ -31,6 +31,8 @@ public class createAirportDatabaseMain {
 		// TODO Auto-generated method stub
 		
 		try {
+			
+			DownloadAirportFilesModul.airportFileDownloader();
 			
 			CreateDatabaseTool tool = new CreateDatabaseTool();
 			ParseAirportCsvFilesModul parseModul = new ParseAirportCsvFilesModul();
@@ -64,7 +66,7 @@ public class createAirportDatabaseMain {
 			System.out.println("Lege Navaids an");
 			tool.addNavaids(navaidsObjectList);
 			System.out.println("Fertig.");
-		} catch (IOException | CsvException | URISyntaxException | SQLException | ConfigFileToolException | AlertException | SqlExecutionToolException e) {
+		} catch (IOException | CsvException | URISyntaxException | SQLException | ConfigFileToolException  | SqlExecutionToolException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

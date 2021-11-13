@@ -13,7 +13,6 @@ import rentasad.library.db.MYSQLConnection;
 import rentasad.library.db.sqlExecutionTool.SqlExecutionToolException;
 import rentasad.library.db.sqlExecutionTool.SqlFileExecutionTool;
 import rentasad.library.db.sqlExecutionTool.objects.SqlExecutionObject;
-import rentasad.library.tools.exceptions.guiExceptions.AlertException;
 import rentasad.tools.airportsDatabase.objects.AirportFrequenciesObjects;
 import rentasad.tools.airportsDatabase.objects.AirportsObject;
 import rentasad.tools.airportsDatabase.objects.CountriesObject;
@@ -35,7 +34,7 @@ public class CreateDatabaseTool {
 	}
 
 	public void createDatabase()
-			throws SQLException, IOException, AlertException, SqlExecutionToolException, ConfigFileToolException {
+			throws SQLException, IOException, SqlExecutionToolException, ConfigFileToolException {
 
 		SqlFileExecutionTool tool = new SqlFileExecutionTool(configMapMap);
 		List<SqlExecutionObject> sqlObjectList = tool.getSqlExecutionObjectList();

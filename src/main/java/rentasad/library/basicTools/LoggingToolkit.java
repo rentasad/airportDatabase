@@ -1,8 +1,6 @@
 package rentasad.library.basicTools;
 
-import org.apache.log4j.ConsoleAppender;
-import org.apache.log4j.Logger;
-import org.apache.log4j.SimpleLayout;
+import java.util.logging.Logger;
 
 /**
  *
@@ -25,22 +23,22 @@ public class LoggingToolkit
         // TODO Auto-generated constructor stub
     }
 
-    /**
-    *
-    * Description: return a Logger instance with ConsoleAppender
-    *
-    * @return
-    * Creation: 10.03.2016 by mst
-    */
-   public static Logger getLogger()
-   {
-       if (logger == null)
-       {
-           logger = org.apache.log4j.Logger.getRootLogger();
-           SimpleLayout layout = new SimpleLayout();
-           ConsoleAppender consoleAppender = new ConsoleAppender(layout);
-           logger.addAppender(consoleAppender);
-       }
-       return logger;
-   }
+//    /**
+//    *
+//    * Description: return a Logger instance with ConsoleAppender
+//    *
+//    * @return
+//    * Creation: 10.03.2016 by mst
+//    */
+//   public static Logger getLogger()
+//   {
+//       if (logger == null)
+//       {
+//           logger = org.apache.log4j.Logger.getRootLogger();
+//           SimpleLayout layout = new SimpleLayout();
+//           ConsoleAppender consoleAppender = new ConsoleAppender(layout);
+//           logger.addAppender(consoleAppender);
+//       }
+//       return logger;
+//   }
 }

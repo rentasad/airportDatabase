@@ -35,19 +35,18 @@ public class CreateAirportDatabaseMain {
 			DownloadAirportFilesModul.airportFileDownloader();
 			
 			CreateDatabaseTool tool = new CreateDatabaseTool();
-			ParseAirportCsvFilesModul parseModul = new ParseAirportCsvFilesModul();
 			System.out.println("Parse Airports.CSV");
-			List<AirportsObject> airportObjectList = parseModul.parseAirportCsv("resources/download/airports.csv");
+			List<AirportsObject> airportObjectList = ParseAirportCsvFilesModul.parseAirportCsv("resources/download/airports.csv");
 			System.out.println("Parse Airport-Frequencies");
-			List<AirportFrequenciesObjects> airportFrequenciesObjectList = parseModul.parseAirportFrequenciesCsv("resources/download/airport-frequencies.csv");
+			List<AirportFrequenciesObjects> airportFrequenciesObjectList = ParseAirportCsvFilesModul.parseAirportFrequenciesCsv("resources/download/airport-frequencies.csv");
 			System.out.println("Parse Countries");
-			List<CountriesObject> countriesObjectList = parseModul.parseCountriesCsv("resources/download/countries.csv");
+			List<CountriesObject> countriesObjectList = ParseAirportCsvFilesModul.parseCountriesCsv("resources/download/countries.csv");
 			System.out.println("Navaids");
-			List<NavaidsObject> navaidsObjectList= parseModul.parseNavaidsCsv("resources/download/navaids.csv");
+			List<NavaidsObject> navaidsObjectList= ParseAirportCsvFilesModul.parseNavaidsCsv("resources/download/navaids.csv");
 			System.out.println("Regions");
-			List<RegionsObject> regionsObjectList = parseModul.parseRegionsCsv("resources/download/regions.csv");
+			List<RegionsObject> regionsObjectList = ParseAirportCsvFilesModul.parseRegionsCsv("resources/download/regions.csv");
 			System.out.println("Runways");
-			List<RunwaysObject> runwayObjectList = parseModul.parseRunwayCsv("resources/download/runways.csv");
+			List<RunwaysObject> runwayObjectList = ParseAirportCsvFilesModul.parseRunwayCsv("resources/download/runways.csv");
 			
 			// Erstellen der Datenbankstruktur
 			tool.createDatabase();

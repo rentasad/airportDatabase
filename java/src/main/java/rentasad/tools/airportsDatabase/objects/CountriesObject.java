@@ -18,7 +18,9 @@ public class CountriesObject {
 	
 	@CsvBindByName
 	private String wikipedia_link;
-
+	
+	@CsvBindByName
+	private String keywords;
 	/**
 	 * @return the id
 	 */
@@ -91,6 +93,6 @@ public class CountriesObject {
 	public void setKeywords(String keywords) {
 		this.keywords = keywords;
 	}
-	private String keywords;
+	
 
 }

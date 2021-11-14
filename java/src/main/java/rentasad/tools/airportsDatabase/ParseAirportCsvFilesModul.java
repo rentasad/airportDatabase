@@ -34,7 +34,7 @@ public class ParseAirportCsvFilesModul {
 	 * @throws IOException
 	 * @throws URISyntaxException
 	 */
-	public List<AirportsObject> parseAirportCsv(final String csvFilePath)
+	public static List<AirportsObject> parseAirportCsv(final String csvFilePath)
 			throws IOException, CsvException, URISyntaxException {
 
 		CSVReader reader = new CSVReader(new FileReader(csvFilePath));
@@ -43,7 +43,7 @@ public class ParseAirportCsvFilesModul {
 		List<AirportsObject> airportList = beanReader.parse();
 		return airportList;
 	}
-	
+
 	/**
 	 * 
 	 * @param csvFilePath
@@ -52,7 +52,7 @@ public class ParseAirportCsvFilesModul {
 	 * @throws CsvException
 	 * @throws URISyntaxException
 	 */
-	public List<AirportFrequenciesObjects> parseAirportFrequenciesCsv(final String csvFilePath)
+	public static List<AirportFrequenciesObjects> parseAirportFrequenciesCsv(final String csvFilePath)
 			throws IOException, CsvException, URISyntaxException {
 
 		CSVReader reader = new CSVReader(new FileReader(csvFilePath));
@@ -60,8 +60,9 @@ public class ParseAirportCsvFilesModul {
 				.withType(AirportFrequenciesObjects.class).withSeparator(',').withQuoteChar('"').build();
 		List<AirportFrequenciesObjects> airportFrequenciesObjectsList = beanReader.parse();
 		return airportFrequenciesObjectsList;
-		
+
 	}
+
 	/**
 	 * 
 	 * @param csvFilePath
@@ -70,7 +71,7 @@ public class ParseAirportCsvFilesModul {
 	 * @throws CsvException
 	 * @throws URISyntaxException
 	 */
-	public List<CountriesObject> parseCountriesCsv(final String csvFilePath)
+	public static List<CountriesObject> parseCountriesCsv(final String csvFilePath)
 			throws IOException, CsvException, URISyntaxException {
 
 		CSVReader reader = new CSVReader(new FileReader(csvFilePath));
@@ -78,9 +79,9 @@ public class ParseAirportCsvFilesModul {
 				.withType(CountriesObject.class).withSeparator(',').withQuoteChar('"').build();
 		List<CountriesObject> countriesList = beanReader.parse();
 		return countriesList;
-		
+
 	}
-	
+
 	/**
 	 * 
 	 * @param csvFilePath
@@ -89,17 +90,17 @@ public class ParseAirportCsvFilesModul {
 	 * @throws CsvException
 	 * @throws URISyntaxException
 	 */
-	public List<NavaidsObject> parseNavaidsCsv(final String csvFilePath)
+	public static List<NavaidsObject> parseNavaidsCsv(final String csvFilePath)
 			throws IOException, CsvException, URISyntaxException {
 
 		CSVReader reader = new CSVReader(new FileReader(csvFilePath));
-		CsvToBean<NavaidsObject> beanReader = new CsvToBeanBuilder<NavaidsObject>(reader)
-				.withType(NavaidsObject.class).withSeparator(',').withQuoteChar('"').build();
+		CsvToBean<NavaidsObject> beanReader = new CsvToBeanBuilder<NavaidsObject>(reader).withType(NavaidsObject.class)
+				.withSeparator(',').withQuoteChar('"').build();
 		List<NavaidsObject> navaidsObjectList = beanReader.parse();
 		return navaidsObjectList;
-		
+
 	}
-	
+
 	/**
 	 * 
 	 * @param csvFilePath
@@ -108,17 +109,17 @@ public class ParseAirportCsvFilesModul {
 	 * @throws CsvException
 	 * @throws URISyntaxException
 	 */
-	public List<RegionsObject> parseRegionsCsv(final String csvFilePath)
+	public static List<RegionsObject> parseRegionsCsv(final String csvFilePath)
 			throws IOException, CsvException, URISyntaxException {
 
 		CSVReader reader = new CSVReader(new FileReader(csvFilePath));
-		CsvToBean<RegionsObject> beanReader = new CsvToBeanBuilder<RegionsObject>(reader)
-				.withType(RegionsObject.class).withSeparator(',').withQuoteChar('"').build();
+		CsvToBean<RegionsObject> beanReader = new CsvToBeanBuilder<RegionsObject>(reader).withType(RegionsObject.class)
+				.withSeparator(',').withQuoteChar('"').build();
 		List<RegionsObject> regionsObjectList = beanReader.parse();
 		return regionsObjectList;
-		
+
 	}
-	
+
 	/**
 	 * 
 	 * @param csvFilePath
@@ -127,14 +128,14 @@ public class ParseAirportCsvFilesModul {
 	 * @throws CsvException
 	 * @throws URISyntaxException
 	 */
-	public List<RunwaysObject> parseRunwayCsv(final String csvFilePath)
+	public static List<RunwaysObject> parseRunwayCsv(final String csvFilePath)
 			throws IOException, CsvException, URISyntaxException {
 
 		CSVReader reader = new CSVReader(new FileReader(csvFilePath));
-		CsvToBean<RunwaysObject> beanReader = new CsvToBeanBuilder<RunwaysObject>(reader)
-				.withType(RunwaysObject.class).withSeparator(',').withQuoteChar('"').build();
+		CsvToBean<RunwaysObject> beanReader = new CsvToBeanBuilder<RunwaysObject>(reader).withType(RunwaysObject.class)
+				.withSeparator(',').withQuoteChar('"').build();
 		List<RunwaysObject> regionsObjectList = beanReader.parse();
 		return regionsObjectList;
-		
+
 	}
 }

@@ -6,7 +6,7 @@ V 0.1.0-Snapshot
 
 in resources/config/ you find the config file for the project:
 
-- resources/config/downloadLinks.ini
+- [resources/config/downloadLinks.ini]
   This file contains the download-links and files for the airports datas. 
 
 - resources/config/exampleConfigSqlExecution.ini

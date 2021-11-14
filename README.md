@@ -1,8 +1,17 @@
 # airportDatabase V 0.1.0-Snapshot
 Download all Airport CSVs from https://ourairports.com/data, parse it and insert it into a mysql database
 
+# Prequesits
 
-# How to use
+for users which don't have skills in git, docker, maven and java, start with the following steps:
+- Download and Install git for windows
+  https://git-scm.com/downloads
+
+- Download Docker for Windows
+  https://hub.docker.com/editions/community/docker-ce-desktop-windows
+
+
+# How to start
 
 in resources/config/ you find the config file for the project:
 

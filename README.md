@@ -19,13 +19,13 @@ in [/docker-compose.yml](/docker-compose.yml) you find a small example to provid
 small mariadb-database docker-instance to use it for the database creation.
 
 You yould start the containers with 
-´ docker-compose up
+> docker-compose up
 
 if you want to exit the container press STRG+C 
 
 To start the containers in background use
 
-docker-compose -d up
+> docker-compose -d up
 
 
 

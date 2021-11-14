@@ -21,7 +21,7 @@ import rentasad.tools.airportsDatabase.objects.RunwaysObject;
  * @author matthi
  *
  */
-public class createAirportDatabaseMain {
+public class CreateAirportDatabaseMain {
 	
 	/**
 	 * 
@@ -66,6 +66,8 @@ public class createAirportDatabaseMain {
 			System.out.println("Lege Navaids an");
 			tool.addNavaids(navaidsObjectList);
 			System.out.println("Fertig.");
+			
+			
 		} catch (IOException | CsvException | URISyntaxException | SQLException | ConfigFileToolException  | SqlExecutionToolException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

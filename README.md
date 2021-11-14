@@ -27,6 +27,8 @@ To start the containers in background use
 
 > docker-compose -d up
 
+After starting the container you could access the mySql-Database with phpmyadmin and 
+http://localhost:8080
 
 
 

@@ -15,7 +15,7 @@ in resources/config/ you find the config file for the project:
 Copy this file to "configSqlExecution.ini" and change the config values to connect to your mySql database instance
 
 # Use Docker to connect to own local mysql container
-in [docker/docker-compose.yml](docker/docker-compose.yml) you find a small example to provide a small mysql database docker-instance to use it for the database creation.
+in [docker/docker-compose.yml](docker/docker-compose.yml) you find a small example to provide a small mariadb-database docker-instance to use it for the database creation.
 
 
 

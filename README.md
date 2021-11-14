@@ -1,5 +1,5 @@
 # airportDatabase
-Download Airport.csv from https://ourairports.com/data, parse it and insert it into a mysql database
+Download all Airport CSVs from https://ourairports.com/data, parse it and insert it into a mysql database
 V 0.1.0-Snapshot
 
 # How to use

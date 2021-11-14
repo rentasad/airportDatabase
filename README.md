@@ -3,7 +3,7 @@ Download all Airport CSVs from https://ourairports.com/data, parse it and insert
 
 # Prequesits
 
-for users which don't have skills in git, docker, maven and java, start with the following steps:
+for windows-users which don't have skills in git, docker, maven and java, start with the following steps:
 - Download and Install git for windows
   https://git-scm.com/downloads
 

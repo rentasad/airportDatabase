@@ -30,6 +30,8 @@ To start the containers in background use
 After starting the container you could access the mySql-Database with phpmyadmin and 
 http://localhost:8080
 
+the default login is: root / notSecureChangeMe
+
 
 
 # State of Project:

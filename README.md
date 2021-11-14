@@ -10,6 +10,10 @@ for users which don't have skills in git, docker, maven and java, start with the
 - Download Docker for Windows
   https://hub.docker.com/editions/community/docker-ce-desktop-windows
 
+- go into a folder where you want to download this project and open a command line in this path
+- clone this rpository with
+> git clone https://github.com/rentasad/airportDatabase.git
+
 
 # How to start
 
@@ -19,9 +23,8 @@ in resources/config/ you find the config file for the project:
   This file contains the download-links and files for the airports datas. 
 
 - [resources/config/exampleConfigSqlExecution.ini](resources/config/exampleConfigSqlExecution.ini)
-  example config file, contains the configuration values for sql excecution and database connection. 
-  
-Copy this file to "configSqlExecution.ini" and change the config values to connect to your mySql database instance
+  example config file, contains the default configuration values for sql excecution and database connection. 
+  Copy this file to "configSqlExecution.ini" and change the config values to connect to your mySql database instance
 
 # Use Docker to connect to own local mysql container
 in [/docker-compose.yml](/docker-compose.yml) you find a small example to provide a 

@@ -32,24 +32,24 @@ public class ParseAirportCsvFilesModulTest {
 		URL airportFileUrl = classLoader.getResource("test/airports.csv");
 		List<AirportsObject> airportList = ParseAirportCsvFilesModul.parseAirportCsv(airportFileUrl.getFile());
 		AirportsObject ao = airportList.get(0);
-		assertEquals(ao.getContinent(), "EU");
-		assertEquals(ao.getElevation_ft(), 465);
-		assertEquals(ao.getGps_code(), "EDDP");
-		assertEquals(ao.getHome_link(), "http://www.leipzig-halle-airport.de/en/index.html");
-		assertEquals(ao.getIata_code(), "LEJ");
-		assertEquals(ao.getId(), 2220);
-		assertEquals(ao.getIdent(), "EDDP");
-		assertEquals(ao.getIso_country(), "DE");
-		assertEquals(ao.getIso_region(), "DE-SN");
-		assertEquals(ao.getKeywords(), "Schkeuditz Airport");
-		assertEquals(ao.getLatitude_deg(), "51.423889");
-		assertEquals(ao.getLocal_code(), "");
-		assertEquals(ao.getLongitude_deg(), "12.236389");
-		assertEquals(ao.getMunicipality(), "Leipzig");
-		assertEquals(ao.getName(), "Leipzig/Halle Airport");
-		assertEquals(ao.getType(), "large_airport");
-		assertTrue(ao.isScheduled_service());
-		assertEquals(ao.getWikipedia_link(), "https://en.wikipedia.org/wiki/Leipzig/Halle_Airport");
+		assertEquals("EU", ao.getContinent());
+		assertEquals(465, ao.getElevation_ft());
+		assertEquals("EDDP", ao.getGps_code());
+		assertEquals("http://www.leipzig-halle-airport.de/en/index.html", ao.getHome_link());
+		assertEquals("LEJ", ao.getIata_code());
+		assertEquals(2220, ao.getId());
+		assertEquals("EDDP", ao.getIdent());
+		assertEquals("DE", ao.getIso_country());
+		assertEquals("DE-SN", ao.getIso_region());
+		assertEquals("Schkeuditz Airport", ao.getKeywords());
+		assertEquals("51.423889", ao.getLatitude_deg());
+		assertEquals("", ao.getLocal_code());
+		assertEquals("12.236389", ao.getLongitude_deg());
+		assertEquals("Leipzig", ao.getMunicipality());
+		assertEquals("Leipzig/Halle Airport", ao.getName());
+		assertEquals("large_airport", ao.getType());
+		assertTrue(ao.getScheduled_service());
+		assertEquals("https://en.wikipedia.org/wiki/Leipzig/Halle_Airport", ao.getWikipedia_link());
 	}
 
 	@Test
@@ -58,14 +58,14 @@ public class ParseAirportCsvFilesModulTest {
 		URL airportFrequenciesFileUrl = classLoader.getResource("test/airport-frequencies.csv");
 		List<AirportFrequenciesObjects> airportFrequenciesList = ParseAirportCsvFilesModul
 				.parseAirportFrequenciesCsv(airportFrequenciesFileUrl.getFile());
-		assertTrue(airportFrequenciesList.size() == 1);
+        assertEquals(1, airportFrequenciesList.size());
 		AirportFrequenciesObjects af = airportFrequenciesList.get(0);
-		assertEquals(af.getId(), 52814);
-		assertEquals(af.getAirport_ref(), 2220);
-		assertEquals(af.getAirport_ident(), "EDDP");
-		assertEquals(af.getType(), "APP");
-		assertEquals(af.getDescription(), "MUNCHEN RADAR");
-		assertEquals(af.getFrequency_mhz(), "124.175");
+		assertEquals(52814, af.getId());
+		assertEquals(2220, af.getAirport_ref());
+		assertEquals("EDDP", af.getAirport_ident());
+		assertEquals("APP", af.getType());
+		assertEquals("MUNCHEN RADAR", af.getDescription());
+		assertEquals("124.175", af.getFrequency_mhz());
 
 	}
 
@@ -77,8 +77,8 @@ public class ParseAirportCsvFilesModulTest {
 				.parseRegionsCsv(airportFrequenciesFileUrl.getFile());
 		assertTrue(regionsList.size() == 1);
 		RegionsObject ro = regionsList.get(0);
-		assertEquals(ro.getId(), 303548);
-		assertEquals(ro.getCode(), "DE-BE");
+		assertEquals(303548, ro.getId());
+		assertEquals("DE-BE", ro.getCode());
 		assertEquals(ro.getLocal_code(), "BE");
 		assertEquals(ro.getName(), "Berlin");
 		assertEquals(ro.getContinent(), "EU");

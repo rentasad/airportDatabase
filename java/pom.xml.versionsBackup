@@ -1,0 +1,209 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>rentasad</groupId>
+	<artifactId>rentasad.tools.airportsDatabase</artifactId>
+	<version>0.1.0</version>
+	<name>Airports Database Tool</name>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>11</maven.compiler.source>
+		<maven.compiler.target>11</maven.compiler.target>
+		<!-- DEPENDENCIES VERSIONS -->
+		<maven-clean-plugin>3.1.0</maven-clean-plugin>
+		<maven-resources-plugin>3.2.0</maven-resources-plugin>
+		<maven-compiler-plugin>3.8.1</maven-compiler-plugin>
+		<maven-surefire-plugin>3.0.0-M5</maven-surefire-plugin>
+		<maven-jar-plugin>3.2.0</maven-jar-plugin>
+		<maven-install-plugin>3.0.0-M1</maven-install-plugin>
+		<maven-deploy-plugin>3.0.0-M1</maven-deploy-plugin>
+		<maven-site-plugin>3.9.1</maven-site-plugin>
+		<mavenProjectInfoReportsPlugin>3.1.2</mavenProjectInfoReportsPlugin>
+		<!-- VERSION PROPERTY -->
+		<!-- USING WITH ${basicToolParentVersion} -->
+		<basicToolParentVersion>B2.0.0</basicToolParentVersion>
+	</properties>
+
+
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.junit.jupiter/junit-jupiter-api -->
+		<dependency>
+			<groupId>org.junit.jupiter</groupId>
+			<artifactId>junit-jupiter-api</artifactId>
+			<version>5.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.opencsv</groupId>
+			<artifactId>opencsv</artifactId>
+			<version>4.6</version>
+		</dependency>
+		<dependency>
+			<groupId>org.ini4j</groupId>
+			<artifactId>ini4j</artifactId>
+			<version>0.5.4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.xerial/sqlite-jdbc -->
+		<dependency>
+			<groupId>org.xerial</groupId>
+			<artifactId>sqlite-jdbc</artifactId>
+			<version>3.41.2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>8.0.28</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-core</artifactId>
+			<version>2.25.3</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<pluginManagement>
+
+			<!-- lock down plugins versions to avoid using Maven defaults (may be 
+				moved to parent pom) -->
+			<plugins>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>exec-maven-plugin</artifactId>
+					<version>3.0.0</version>
+					<configuration>
+						<mainClass>rentasad.tools.airportsDatabase.CreateAirportDatabaseMain</mainClass>
+					</configuration>
+				</plugin>
+				<plugin>
+					<groupId>org.projectlombok</groupId>
+					<artifactId>lombok-maven-plugin</artifactId>
+					<version>1.18.20.0</version>
+					<executions>
+						<execution>
+							<phase>generate-sources</phase>
+							<goals>
+								<goal>delombok</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-site-plugin</artifactId>
+					<version>${maven-site-plugin}</version>
+				</plugin>
+				<!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
+				<plugin>
+					<artifactId>maven-clean-plugin</artifactId>
+					<version>${maven-clean-plugin}</version>
+				</plugin>
+				<!-- default lifecycle, jar packaging: see https://maven.apache.org/ref/current/maven-core/default-bindings.html#Plugin_bindings_for_jar_packaging -->
+				<plugin>
+					<artifactId>maven-resources-plugin</artifactId>
+					<version>${maven-resources-plugin}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>${maven-compiler-plugin}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-surefire-plugin</artifactId>
+					<version>${maven-surefire-plugin}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-jar-plugin</artifactId>
+					<version>${maven-jar-plugin}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-install-plugin</artifactId>
+					<version>${maven-install-plugin}</version>
+				</plugin>
+				<plugin>
+					<artifactId>maven-deploy-plugin</artifactId>
+					<version>${maven-deploy-plugin}</version>
+				</plugin>
+				<plugin>
+					<groupId>org.codehaus.mojo</groupId>
+					<artifactId>flatten-maven-plugin</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<updatePomFile>true</updatePomFile>
+					</configuration>
+					<executions>
+						<execution>
+							<id>flatten</id>
+							<phase>process-resources</phase>
+							<goals>
+								<goal>flatten</goal>
+							</goals>
+						</execution>
+						<execution>
+							<id>flatten.clean</id>
+							<phase>clean</phase>
+							<goals>
+								<goal>clean</goal>
+							</goals>
+						</execution>
+					</executions>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+	<description>&lt;h1&gt; airportDatabase V 0.1.0-Snapshot&lt;/h1&gt;
+
+Download all Airport CSVs from https://ourairports.com/data, parse it and insert it into a mysql database
+
+&lt;h2&gt; Prequesits&lt;/h2&gt;
+
+for windows-users which don't have skills in git, docker, maven and java, start with the following steps:
+- Download and Install git for windows
+  https://git-scm.com/downloads
+
+- Download Docker for Windows
+  https://hub.docker.com/editions/community/docker-ce-desktop-windows
+
+- go into a folder where you want to download this project and open a command line in this path
+- clone this rpository with
+&gt; git clone https://github.com/rentasad/airportDatabase.git
+
+
+# How to start
+
+in resources/config/ you find the config file for the project:
+
+- [resources/config/downloadLinks.ini](resources/config/downloadLinks.ini)
+  This file contains the download-links and files for the airports datas. 
+
+- [resources/config/exampleConfigSqlExecution.ini](resources/config/exampleConfigSqlExecution.ini)
+  example config file, contains the default configuration values for sql excecution and database connection. 
+  Copy this file to &quot;configSqlExecution.ini&quot; and change the config values to connect to your mySql database instance
+
+# How to use with  docker-compose
+in [/docker-compose.yml](/docker-compose.yml) you find a small example to provide a 
+small mariadb-database docker-instance to use it for the database creation.
+
+You yould start the containers with 
+&gt; docker-compose up
+
+if you want to exit the container press STRG+C 
+
+To start the containers in background use
+
+&gt; docker-compose -d up
+
+After starting the container you could access the mySql-Database with phpmyadmin and 
+http://localhost:8080
+
+the default login is: root / notSecureChangeMe
+
+
+
+# State of Project:
+SNAPSHOT to 0.1.0</description>
+	<url>https://github.com/rentasad/airportDatabase</url>
+</project>

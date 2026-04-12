@@ -15,12 +15,12 @@ import rentasad.library.db.MYSQLConnection;
 import rentasad.library.db.sqlExecutionTool.SqlExecutionToolException;
 import rentasad.library.db.sqlExecutionTool.SqlFileExecutionTool;
 import rentasad.library.db.sqlExecutionTool.objects.SqlExecutionObject;
-import rentasad.tools.airportsDatabase.model.AirportFrequenciesObject;
-import rentasad.tools.airportsDatabase.model.AirportsObject;
-import rentasad.tools.airportsDatabase.model.CountriesObject;
-import rentasad.tools.airportsDatabase.model.NavaidsObject;
-import rentasad.tools.airportsDatabase.model.RegionsObject;
-import rentasad.tools.airportsDatabase.model.RunwaysObject;
+import rentasad.tools.airportsDatabase.model.AirportFrequency;
+import rentasad.tools.airportsDatabase.model.Airport;
+import rentasad.tools.airportsDatabase.model.Country;
+import rentasad.tools.airportsDatabase.model.Navaid;
+import rentasad.tools.airportsDatabase.model.Region;
+import rentasad.tools.airportsDatabase.model.Runway;
 
 /**
  * Utility class for creating and populating a database with aviation-related data.
@@ -37,13 +37,15 @@ import rentasad.tools.airportsDatabase.model.RunwaysObject;
 @Log
 public class AirportDatabaseTool {
 
+	private static final int BATCH_SIZE = 4000;
+
 	private Connection con;
 	private Map<String, Map<String, String>> configMapMap;
 	private String filename;
 
 	public AirportDatabaseTool() throws ConfigFileToolException, SQLException {
 		super();
-		filename = "resources/config/configSqlExecution.ini";
+		filename = AirportDatabaseConfig.CONFIG_SQL_EXECUTION;
 		configMapMap = ConfigFileTool.readIniFileWithAllSections(filename);
 		con = MYSQLConnection.dbConnect(configMapMap.get("MYSQL_CONFIG"));
 	}
@@ -61,7 +63,7 @@ public class AirportDatabaseTool {
 				binder.accept(ps, obj);
 				ps.addBatch();
 				ps.clearParameters();
-				if (line % 4000 == 0) {
+				if (line % BATCH_SIZE == 0) {
 					log.info(String.format("Inserted %d / %d records", line, objectList.size()));
 					ps.executeBatch();
 				}
@@ -80,7 +82,7 @@ public class AirportDatabaseTool {
 
 	}
 
-	public void addAirports(List<AirportsObject> airportObjectList) throws SQLException {
+	public void addAirports(List<Airport> airportObjectList) throws SQLException {
 		String insertQuery = """
 				INSERT INTO airports (id, ident, type, name, latitude_deg, longitude_deg, elevation_ft, continent,
 				iso_country, iso_region, municipality, scheduled_service, gps_code, iata_code, local_code,
@@ -114,7 +116,7 @@ public class AirportDatabaseTool {
 		});
 	}
 
-	public void addAirportFrequencies(List<AirportFrequenciesObject> airportFrequenciesList) throws SQLException {
+	public void addAirportFrequencies(List<AirportFrequency> airportFrequenciesList) throws SQLException {
 		String insertQuery = "INSERT INTO airport_frequencies (ID, AIRPORT_REF, AIRPORT_IDENT, TYPE, DESCRIPTION, FREQUENCY_MHZ) VALUES (?,?,?,?,?,?)";
 		addObjects(airportFrequenciesList, insertQuery, (ps, ao) -> {
 			try {
@@ -131,7 +133,7 @@ public class AirportDatabaseTool {
 		});
 	}
 
-	public void addCountries(List<CountriesObject> countriesObjectList) throws SQLException {
+	public void addCountries(List<Country> countriesObjectList) throws SQLException {
 		String insertQuery = "INSERT INTO countries (ID, CODE, NAME, CONTINENT, WIKIPEDIA_LINK, KEYWORDS) VALUES (?,?,?,?,?,?)";
 		addObjects(countriesObjectList, insertQuery, (ps, ao) -> {
 			try {
@@ -148,7 +150,7 @@ public class AirportDatabaseTool {
 		});
 	}
 
-	public void addRegions(List<RegionsObject> regionsObjectList) throws SQLException {
+	public void addRegions(List<Region> regionsObjectList) throws SQLException {
 		String insertQuery = "INSERT INTO regions (id, code, local_code, name, continent, iso_country, wikipedia_link, keywords) VALUES (?,?,?,?,?,?,?,?)";
 		addObjects(regionsObjectList, insertQuery, (ps, ao) -> {
 			try {
@@ -167,7 +169,7 @@ public class AirportDatabaseTool {
 		});
 	}
 
-	public void addRunways(List<RunwaysObject> runwayObjectList) throws SQLException {
+	public void addRunways(List<Runway> runwayObjectList) throws SQLException {
 		String insertQuery = "INSERT INTO runways (id, airport_ref, airport_ident, length_ft, width_ft, surface, lighted, closed, le_ident, le_latitude_deg, le_longitude_deg, le_elevation_ft, le_heading_degT, le_displaced_threshold_ft, he_ident, he_latitude_deg, he_longitude_deg, he_elevation_ft, he_heading_degT, he_displaced_threshold_ft) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		addObjects(runwayObjectList, insertQuery, (ps, ao) -> {
 			try {
@@ -198,7 +200,7 @@ public class AirportDatabaseTool {
 		});
 	}
 
-	public void addNavaids(List<NavaidsObject> navaidObjectList) throws SQLException {
+	public void addNavaids(List<Navaid> navaidObjectList) throws SQLException {
 		String insertQuery = "INSERT INTO navaids (ID, FILENAME, IDENT, NAME, TYPE, FREQUENCY_KHZ, LATITUDE_DEG, LONGITUDE_DEG, ELEVATION_FT, ISO_COUNTRY, DME_FREQUENCY_KHZ, DME_CHANNEL, DME_LATITUDE_DEG, DME_LONGITUDE_DEG, DME_ELEVATION_FT, SLAVED_VARIATION_DEG, MAGNETIC_VARIATION_DEG, USAGETYPE, POWER, ASSOCIATED_AIRPORT) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 		addObjects(navaidObjectList, insertQuery, (ps, ao) -> {
 			try {

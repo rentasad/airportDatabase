@@ -14,7 +14,6 @@ public abstract class AbstractLoggingListener
 
     public AbstractLoggingListener()
     {
-        // TODO Auto-generated constructor stub
     }
 
     public static void addLogger(Logger logger)
@@ -27,7 +26,7 @@ public abstract class AbstractLoggingListener
 
     public static void removeLogger(Logger logger)
     {
-        if (!loggerList.contains(logger))
+        if (loggerList.contains(logger))
         {
             loggerList.remove(logger);
         }
@@ -66,7 +65,7 @@ public static void logError(String message, Exception e)
        {
            for (Logger logger : loggerList)
            {
-               logger.log(Level.SEVERE, message);
+               logger.log(Level.SEVERE, message, e);
            }
        }
    }

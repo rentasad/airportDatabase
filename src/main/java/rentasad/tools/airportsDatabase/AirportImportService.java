@@ -1,7 +1,7 @@
 package rentasad.tools.airportsDatabase;
 
 import lombok.extern.java.Log;
-import rentasad.library.basicTools.DownloadAirportFilesModul;
+import rentasad.library.basicTools.DownloadAirportFilesModule;
 import rentasad.tools.airportsDatabase.model.*;
 
 import java.util.List;
@@ -34,9 +34,9 @@ public class AirportImportService {
      * This method performs the following steps:
      * 1. Logs the start of the import process.
      * 2. Downloads required CSV files containing data for airports, frequencies, countries, navaids,
-     *    regions, and runways using the {@code DownloadAirportFilesModul.airportFileDownloader()} method.
-     * 3. Parses the downloaded CSV files into corresponding Java objects using methods from
-     *    {@code ParseAirportCsvFilesModul}.
+     *    regions, and runways using the {@code DownloadAirportFilesModule.airportFileDownloader()} method.
+     * 3. Parses the downloaded CSV files into corresponding Java objects using
+     *    {@code ParseAirportCsvFilesModule}.
      * 4. Creates the necessary database structure using the {@code dbTool.createDatabase()} method.
      * 5. Inserts the parsed data into the database using appropriate methods in the {@code dbTool} object.
      * 6. Logs the successful completion of the import process.
@@ -49,15 +49,16 @@ public class AirportImportService {
     public void importData() throws Exception {
         log.info("Starting airport data import process...");
 
-        DownloadAirportFilesModul.airportFileDownloader();
+        DownloadAirportFilesModule.airportFileDownloader();
 
         log.info("Parsing CSV files...");
-        List<AirportsObject> airports = ParseAirportCsvFilesModul.parseAirportCsv("resources/download/airports.csv");
-        List<AirportFrequenciesObject> frequencies = ParseAirportCsvFilesModul.parseAirportFrequenciesCsv("resources/download/airport-frequencies.csv");
-        List<CountriesObject> countries = ParseAirportCsvFilesModul.parseCountriesCsv("resources/download/countries.csv");
-        List<NavaidsObject> navaids = ParseAirportCsvFilesModul.parseNavaidsCsv("resources/download/navaids.csv");
-        List<RegionsObject> regions = ParseAirportCsvFilesModul.parseRegionsCsv("resources/download/regions.csv");
-        List<RunwaysObject> runways = ParseAirportCsvFilesModul.parseRunwayCsv("resources/download/runways.csv");
+        String dir = AirportDatabaseConfig.DOWNLOAD_DIR;
+        List<Airport> airports = ParseAirportCsvFilesModule.parseCsv(dir + "airports.csv", Airport.class);
+        List<AirportFrequency> frequencies = ParseAirportCsvFilesModule.parseCsv(dir + "airport-frequencies.csv", AirportFrequency.class);
+        List<Country> countries = ParseAirportCsvFilesModule.parseCsv(dir + "countries.csv", Country.class);
+        List<Navaid> navaids = ParseAirportCsvFilesModule.parseCsv(dir + "navaids.csv", Navaid.class);
+        List<Region> regions = ParseAirportCsvFilesModule.parseCsv(dir + "regions.csv", Region.class);
+        List<Runway> runways = ParseAirportCsvFilesModule.parseCsv(dir + "runways.csv", Runway.class);
 
         log.info("Creating database structure...");
         dbTool.createDatabase();

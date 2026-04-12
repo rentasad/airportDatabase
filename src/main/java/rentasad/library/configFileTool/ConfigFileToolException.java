@@ -30,7 +30,6 @@ public class ConfigFileToolException extends Exception
     public ConfigFileToolException()
     {
         super();
-        // TODO Auto-generated constructor stub
     }
 
     /**
@@ -46,7 +45,6 @@ public class ConfigFileToolException extends Exception
                                    boolean writableStackTrace)
     {
         super(message, cause, enableSuppression, writableStackTrace);
-        // TODO Auto-generated constructor stub
     }
 
     /**
@@ -58,7 +56,6 @@ public class ConfigFileToolException extends Exception
                                    Throwable cause)
     {
         super(message, cause);
-        // TODO Auto-generated constructor stub
     }
 
     /**
@@ -68,7 +65,6 @@ public class ConfigFileToolException extends Exception
                                    Throwable cause)
     {
         super(cause);
-        // TODO Auto-generated constructor stub
     }
     
     

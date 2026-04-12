@@ -21,10 +21,9 @@ public class CreateAirportDatabaseMain {
 			AirportDatabaseTool tool = new AirportDatabaseTool();
 			AirportImportService importService = new AirportImportService(tool);
 			importService.importData();
-			log.info("Fertig.");
+			log.info("Done.");
 		} catch (Exception e) {
-			log.severe("Fehler beim Importieren der Daten: " + e.getMessage());
-			e.printStackTrace();
+			log.severe("Error importing data: " + e.getMessage());
 		}
 	}
 

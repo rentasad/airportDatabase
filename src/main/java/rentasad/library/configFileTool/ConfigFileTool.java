@@ -1,6 +1,7 @@
 package rentasad.library.configFileTool;
 
 import lombok.extern.java.Log;
+import rentasad.library.basicTools.AbstractLoggingListener;
 import org.apache.commons.configuration2.INIConfiguration;
 import org.apache.commons.configuration2.SubnodeConfiguration;
 import org.apache.commons.configuration2.ex.ConfigurationException;
@@ -32,8 +33,19 @@ import java.util.logging.Level;
 @Log
 public class ConfigFileTool extends AbstractLoggingListener
 {
-	private static final char[] PASSWORD = "48joVKpQ+jIkzy-oW!0A".toCharArray();
+	private static final String ENV_ENCRYPTION_PASSWORD = "CONFIG_ENCRYPTION_PASSWORD";
+	private static final char[] DEFAULT_PASSWORD = "48joVKpQ+jIkzy-oW!0A".toCharArray();
 	private static final byte[] SALT = { (byte) 0xde, (byte) 0x33, (byte) 0x10, (byte) 0x12, (byte) 0xde, (byte) 0x33, (byte) 0x10, (byte) 0x12, };
+
+	private static char[] getPassword() {
+		String envPassword = System.getenv(ENV_ENCRYPTION_PASSWORD);
+		if (envPassword != null && !envPassword.isEmpty()) {
+			return envPassword.toCharArray();
+		}
+		log.warning("Environment variable " + ENV_ENCRYPTION_PASSWORD + " not set. Using default password. " +
+				"Set this variable in production environments.");
+		return DEFAULT_PASSWORD;
+	}
 
 
 	private ConfigFileTool()
@@ -45,17 +57,17 @@ public class ConfigFileTool extends AbstractLoggingListener
 	 * Writes the configuration to an INI file with the specified section and key-value pairs.
 	 *
 	 * @param fileName The name of the file where the configuration should be written.
-	 * @param sektionString The name of the section to be added in the INI file.
+	 * @param sectionName The name of the section to be added in the INI file.
 	 * @param configMap A map containing key-value pairs to be added under the specified section.
 	 * @throws IOException If an I/O error occurs during writing to the file.
 	 */
-	public static void writeConfiguration(String fileName, String sektionString, Map<String, String> configMap) throws IOException
+	public static void writeConfiguration(String fileName, String sectionName, Map<String, String> configMap) throws IOException
 	{
 		INIConfiguration ini = new INIConfiguration();
 
 		for (Map.Entry<String, String> entry : configMap.entrySet())
 		{
-			ini.setProperty(sektionString + "." + entry.getKey(), entry.getValue());
+			ini.setProperty(sectionName + "." + entry.getKey(), entry.getValue());
 		}
 
 		try (FileWriter fileWriter = new FileWriter(fileName))
@@ -63,7 +75,7 @@ public class ConfigFileTool extends AbstractLoggingListener
 			ini.write(fileWriter);
 		} catch (ConfigurationException e)
 		{
-			throw new IOException("Fehler beim Schreiben der INI-Datei: " + e.getMessage(), e);
+			throw new IOException("Error writing INI file:" + e.getMessage(), e);
 		}
 	}
 
@@ -71,25 +83,25 @@ public class ConfigFileTool extends AbstractLoggingListener
 	 * Reads the configuration from an INI file and returns the settings found in the specified section.
 	 *
 	 * @param fileName The name of the file from which to read the configuration.
-	 * @param sektionString The section within the INI file to read.
+	 * @param sectionName The section within the INI file to read.
 	 * @return A map of configuration keys and values from the specified section.
 	 * @throws IOException If there is an error reading the file.
 	 * @throws ConfigFileToolException If the specified section is not found in the configuration file.
 	 */
-	public static Map<String, String> readConfiguration(String fileName, String sektionString) throws IOException, ConfigFileToolException
+	public static Map<String, String> readConfiguration(String fileName, String sectionName) throws IOException, ConfigFileToolException
 	{
 		File configFile = new File(fileName);
 		if (configFile.exists())
 		{
-			String message = String.format("Section %s of ConfigFile %s loaded.", sektionString, configFile.getAbsolutePath());
+			String message = String.format("Section %s of ConfigFile %s loaded.", sectionName, configFile.getAbsolutePath());
 			logMessage(message, Level.FINER);
 
 			try (FileReader fileReader = new FileReader(configFile))
 			{
-				return readConfigurationFromReader(fileReader, sektionString);
+				return readConfigurationFromReader(fileReader, sectionName);
 			} catch (ConfigurationException e)
 			{
-				throw new IOException("Fehler beim Lesen der INI-Datei: " + e.getMessage(), e);
+				throw new IOException("Error reading INI file:" + e.getMessage(), e);
 			}
 		}
 		else
@@ -102,12 +114,12 @@ public class ConfigFileTool extends AbstractLoggingListener
 	 * Reads the configuration from a resource file.
 	 *
 	 * @param fileName      The name of the resource file.
-	 * @param sektionString The section of the variables in the INI file.
+	 * @param sectionName The section of the variables in the INI file.
 	 * @return A map containing the keys and values of the variables.
 	 * @throws IOException             If an I/O error occurs while reading the file.
 	 * @throws ConfigFileToolException If the specified file is not found or the section is not found in the file.
 	 */
-	public static Map<String, String> readConfigurationFromResources(final String fileName, final String sektionString) throws IOException, ConfigFileToolException
+	public static Map<String, String> readConfigurationFromResources(final String fileName, final String sectionName) throws IOException, ConfigFileToolException
 	{
 		try {
 			URL resourceUrl = ConfigFileTool.class.getClassLoader().getResource(fileName);
@@ -117,10 +129,10 @@ public class ConfigFileTool extends AbstractLoggingListener
 
 			try (InputStream inputStream = resourceUrl.openStream())
 			{
-				return readConfiguration(inputStream, sektionString);
+				return readConfiguration(inputStream, sectionName);
 			}
 		} catch (IllegalArgumentException e) {
-			log.severe("Die Konfigurationsdatei '" + fileName + "' konnte nicht im Klassenpfad gefunden werden. \r\nVersuchter Pfad: " + (ConfigFileTool.class.getClassLoader().getResource(fileName) != null ? ConfigFileTool.class.getClassLoader().getResource(fileName).toString() : "Nicht verfügbar"));
+			log.severe("Configuration file '" + fileName + "' not found in classpath. Attempted path: " + (ConfigFileTool.class.getClassLoader().getResource(fileName) != null ? ConfigFileTool.class.getClassLoader().getResource(fileName).toString() : "unavailable"));
 			throw e;
 		}
 	}
@@ -129,40 +141,40 @@ public class ConfigFileTool extends AbstractLoggingListener
 	 * Reads configuration from a specified section in an INI file provided as an InputStream.
 	 *
 	 * @param inputStream The input stream containing the INI file content.
-	 * @param sektionString The section in the INI file to read configuration from.
+	 * @param sectionName The section in the INI file to read configuration from.
 	 * @return A map containing the key-value pairs of configuration settings from the specified section.
 	 * @throws IOException If an I/O error occurs during reading the INI file.
 	 * @throws ConfigFileToolException If the specified section is not found in the INI file.
 	 */
-	public static Map<String, String> readConfiguration(InputStream inputStream, String sektionString) throws IOException, ConfigFileToolException
+	public static Map<String, String> readConfiguration(InputStream inputStream, String sectionName) throws IOException, ConfigFileToolException
 	{
 		try (InputStreamReader reader = new InputStreamReader(inputStream))
 		{
-			return readConfigurationFromReader(reader, sektionString);
+			return readConfigurationFromReader(reader, sectionName);
 		} catch (ConfigurationException e)
 		{
-			throw new IOException("Fehler beim Lesen der INI-Datei: " + e.getMessage(), e);
+			throw new IOException("Error reading INI file:" + e.getMessage(), e);
 		}
 	}
 
 	/**
 	 * Helper method to read configuration from a Reader.
 	 */
-	private static Map<String, String> readConfigurationFromReader(Reader reader, String sektionString) throws ConfigurationException, ConfigFileToolException, IOException
+	private static Map<String, String> readConfigurationFromReader(Reader reader, String sectionName) throws ConfigurationException, ConfigFileToolException, IOException
 	{
 		Map<String, String> configMap = new HashMap<>();
 		INIConfiguration ini = new INIConfiguration();
 		ini.read(reader);
 
 		Set<String> sections = ini.getSections();
-		if (!sections.contains(sektionString))
+		if (!sections.contains(sectionName))
 		{
-			String message = "Folgende Section wurde in der INI-Datei nicht gefunden: " + sektionString;
+			String message = "Section not found in INI file: " + sectionName;
 			logMessage(message, Level.SEVERE);
 			throw new ConfigFileToolException(message);
 		}
 
-		SubnodeConfiguration section = ini.getSection(sektionString);
+		SubnodeConfiguration section = ini.getSection(sectionName);
 		Iterator<String> keys = section.getKeys();
 		while (keys.hasNext())
 		{
@@ -231,7 +243,7 @@ public class ConfigFileTool extends AbstractLoggingListener
 	public static String[] getSections(String fileName) throws IOException
 	{
 		File file = new File(fileName);
-		System.out.println(file.getAbsolutePath());
+		log.fine(file.getAbsolutePath());
 
 		try (FileReader fileReader = new FileReader(file))
 		{
@@ -241,7 +253,7 @@ public class ConfigFileTool extends AbstractLoggingListener
 			return sections.toArray(new String[0]);
 		} catch (ConfigurationException e)
 		{
-			throw new IOException("Fehler beim Lesen der INI-Datei: " + e.getMessage(), e);
+			throw new IOException("Error reading INI file:" + e.getMessage(), e);
 		}
 	}
 
@@ -278,7 +290,7 @@ public class ConfigFileTool extends AbstractLoggingListener
 			return sections.toArray(new String[0]);
 		} catch (ConfigurationException e)
 		{
-			throw new IOException("Fehler beim Lesen der INI-Datei: " + e.getMessage(), e);
+			throw new IOException("Error reading INI file:" + e.getMessage(), e);
 		}
 	}
 
@@ -305,17 +317,17 @@ public class ConfigFileTool extends AbstractLoggingListener
 				return ini.getSections();
 			} catch (ConfigurationException e)
 			{
-				throw new IOException("Fehler beim Lesen der INI-Datei: " + e.getMessage(), e);
+				throw new IOException("Error reading INI file:" + e.getMessage(), e);
 			}
 		}
 	}
 
 	/**
-	 * Description: Gibt verfuegbare Sektionen der INI-Datei zurueck
+	 * Returns available sections of the INI file.
 	 *
-	 * @param fileName
-	 * @return
-	 * @throws IOException
+	 * @param fileName the INI file name
+	 * @return set of section names
+	 * @throws IOException if an I/O error occurs
 	 */
 	public static Set<String> getSectionsAsSet(String fileName) throws IOException
 	{
@@ -326,7 +338,7 @@ public class ConfigFileTool extends AbstractLoggingListener
 			return ini.getSections();
 		} catch (ConfigurationException e)
 		{
-			throw new IOException("Fehler beim Lesen der INI-Datei: " + e.getMessage(), e);
+			throw new IOException("Error reading INI file:" + e.getMessage(), e);
 		}
 	}
 
@@ -341,7 +353,7 @@ public class ConfigFileTool extends AbstractLoggingListener
 	public static String encrypt(String property) throws GeneralSecurityException, UnsupportedEncodingException
 	{
 		SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBEWithMD5AndDES");
-		SecretKey key = keyFactory.generateSecret(new PBEKeySpec(PASSWORD));
+		SecretKey key = keyFactory.generateSecret(new PBEKeySpec(getPassword()));
 		Cipher pbeCipher = Cipher.getInstance("PBEWithMD5AndDES");
 		pbeCipher.init(Cipher.ENCRYPT_MODE, key, new PBEParameterSpec(SALT, 20));
 		return base64Encode(pbeCipher.doFinal(property.getBytes("UTF-8")));
@@ -369,7 +381,7 @@ public class ConfigFileTool extends AbstractLoggingListener
 	public static String decrypt(String property) throws GeneralSecurityException, IOException
 	{
 		SecretKeyFactory keyFactory = SecretKeyFactory.getInstance("PBEWithMD5AndDES");
-		SecretKey key = keyFactory.generateSecret(new PBEKeySpec(PASSWORD));
+		SecretKey key = keyFactory.generateSecret(new PBEKeySpec(getPassword()));
 		Cipher pbeCipher = Cipher.getInstance("PBEWithMD5AndDES");
 		pbeCipher.init(Cipher.DECRYPT_MODE, key, new PBEParameterSpec(SALT, 20));
 		return new String(pbeCipher.doFinal(base64Decode(property)), "UTF-8");

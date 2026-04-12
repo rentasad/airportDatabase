@@ -21,11 +21,11 @@ services:
      image: maven:3.8-openjdk-17-slim
 
      volumes:
-      - ./src:/usr/src/airportDatabaseCreator/src
-      - ./pom.xml:/usr/src/airportDatabaseCreator/pom.xml
-      - ./resources:/usr/src/airportDatabaseCreator/resources
-      - ./out:/usr/src/airportDatabaseCreator/out
-      - ./maven-repo:/root/.m2
+      - ../src:/usr/src/airportDatabaseCreator/src
+      - ../pom.xml:/usr/src/airportDatabaseCreator/pom.xml
+      - ../resources:/usr/src/airportDatabaseCreator/resources
+      - ../out:/usr/src/airportDatabaseCreator/out
+      - ../maven-repo:/root/.m2
      working_dir: /usr/src/airportDatabaseCreator
      command: mvn compile exec:java
      

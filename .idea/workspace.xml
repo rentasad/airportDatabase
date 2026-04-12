@@ -4,80 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6548c6c8-cec8-4f09-8565-81f49065e6dc" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/airportDatabase.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/.classpath" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/.idea/compiler.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/.project" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/pom.xml.versionsBackup" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/resources/config/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/resources/config/downloadLinks.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/resources/config/exampleConfigSqlExecution.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/resources/download/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/resources/sql/sqlcreation.sql" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/basicTools/AbstractLoggingListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/basicTools/DateTools.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/basicTools/DownloadAirportFilesModul.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/basicTools/FileDownloader.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/configFileTool/AbstractLoggingListener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/configFileTool/ConfigFileTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/configFileTool/ConfigFileToolException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/configFileTool/ConfigParameterNameEnumInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/configFileTool/TokenNotFoundExeception.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/MYSQLConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/MySqlEncodingEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/QueryFunctions.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/DatabaseTableObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/ISQLTableColumnsDescriptionInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/IsqlTableDescriptionInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/MySQLDataTypeValue.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/MySQLTableColumnDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/MySQLTableDescription.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/ODBCConnection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/PreparedDataTypesEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/package-info.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/sqlExecutionTool/SqlExecutionToolException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/sqlExecutionTool/SqlFileExecutionTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/sqlExecutionTool/objects/QueryTypEnum.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/sqlExecutionTool/objects/SqlExecutionObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/tools/exceptions/UnknownEnumException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/tools/fileOperator/FileAlreadyExistException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/tools/fileOperator/FileCouldNotDeleteException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/tools/fileOperator/FileOperator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/tools/fileOperator/SemaphoreTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/AirportImportService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/CreateAirportDatabaseMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/CreateDatabaseTool.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/ParseAirportCsvFilesModul.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/AirportFrequenciesObjects.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/AirportsObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/CountriesObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/NavaidsObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/RegionsObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/RunwaysObject.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/test/java/rentasad/tools/airportsDatabase/ParseAirportCsvFilesModulTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/airport-frequencies.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/airports.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/countries.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/navaids.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/regions.csv" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/runways.csv" beforeDir="false" />
+    <list default="true" id="6548c6c8-cec8-4f09-8565-81f49065e6dc" name="Changes" comment="Remove IntelliJ and Eclipse project configuration files from `bak` directory">
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml.versionsBackup" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,14 +39,21 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "codeWithMe.voiceChat.enabledByDefault": "false",
     "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "refactoring/new__structure",
     "ignore.virus.scanning.warn.message": "true",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "to.speed.mode.migration.done": "true",
     "vue.rearranger.settings.migration": "true"
   }
@@ -149,11 +85,33 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1776018875874</updated>
-      <workItem from="1776018878212" duration="86000" />
+      <workItem from="1776018878212" duration="644000" />
     </task>
+    <task id="LOCAL-00001" summary="Move java folder in root for better integration in Intellij IDE (native maven support)">
+      <option name="closed" value="true" />
+      <created>1776019219502</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776019219503</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Remove IntelliJ and Eclipse project configuration files from `bak` directory">
+      <option name="closed" value="true" />
+      <created>1776019246962</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776019246962</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Move java folder in root for better integration in Intellij IDE (native maven support)" />
+    <MESSAGE value="Remove IntelliJ and Eclipse project configuration files from `bak` directory" />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove IntelliJ and Eclipse project configuration files from `bak` directory" />
   </component>
 </project>

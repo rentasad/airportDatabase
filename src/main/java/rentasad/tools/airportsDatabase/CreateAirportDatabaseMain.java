@@ -9,10 +9,12 @@ import lombok.extern.java.Log;
  */
 @Log
 public class CreateAirportDatabaseMain {
-	
+
 	/**
-	 * 
-	 * @param args
+	 * Entry point for the application. Initializes the necessary tools and services
+	 * to import airport data and logs the process.
+	 *
+	 * @param args the command-line arguments passed to the application
 	 */
 	public static void main(String[] args) {
 		try {

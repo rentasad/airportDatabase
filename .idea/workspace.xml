@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6548c6c8-cec8-4f09-8565-81f49065e6dc" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/airportDatabase.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.settings/org.eclipse.m2e.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/.idea/compiler.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/.idea/encodings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/.idea/jarRepositories.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/.project" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/.settings/org.eclipse.core.resources.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/.settings/org.eclipse.jdt.core.prefs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/pom.xml.versionsBackup" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/resources/config/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/resources/config/downloadLinks.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/resources/config/exampleConfigSqlExecution.ini" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/resources/download/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/resources/sql/sqlcreation.sql" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/basicTools/AbstractLoggingListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/basicTools/DateTools.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/basicTools/DownloadAirportFilesModul.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/basicTools/FileDownloader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/configFileTool/AbstractLoggingListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/configFileTool/ConfigFileTool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/configFileTool/ConfigFileToolException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/configFileTool/ConfigParameterNameEnumInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/configFileTool/TokenNotFoundExeception.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/MYSQLConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/MySqlEncodingEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/QueryFunctions.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/DatabaseTableObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/ISQLTableColumnsDescriptionInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/IsqlTableDescriptionInterface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/MySQLDataTypeValue.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/MySQLTableColumnDescription.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/MySQLTableDescription.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/ODBCConnection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/PreparedDataTypesEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/dataObjects/package-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/sqlExecutionTool/SqlExecutionToolException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/sqlExecutionTool/SqlFileExecutionTool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/sqlExecutionTool/objects/QueryTypEnum.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/db/sqlExecutionTool/objects/SqlExecutionObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/tools/exceptions/UnknownEnumException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/tools/fileOperator/FileAlreadyExistException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/tools/fileOperator/FileCouldNotDeleteException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/tools/fileOperator/FileOperator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/library/tools/fileOperator/SemaphoreTool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/AirportImportService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/CreateAirportDatabaseMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/CreateDatabaseTool.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/ParseAirportCsvFilesModul.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/AirportFrequenciesObjects.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/AirportsObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/CountriesObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/NavaidsObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/RegionsObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/main/java/rentasad/tools/airportsDatabase/objects/RunwaysObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/test/java/rentasad/tools/airportsDatabase/ParseAirportCsvFilesModulTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/airport-frequencies.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/airports.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/countries.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/navaids.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/regions.csv" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/java/src/test/resources/test/runways.csv" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="1600" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="3CGjbsL6CojUI80u1jP2tA0aFXm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.CreateAirportDatabaseMain.executor": "Run",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "codeWithMe.voiceChat.enabledByDefault": "false",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
+    "git-widget-placeholder": "refactoring/new__structure",
+    "ignore.virus.scanning.warn.message": "true",
+    "junie.onboarding.icon.badge.shown": "true",
+    "kotlin-language-version-configured": "true",
+    "to.speed.mode.migration.done": "true",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RunManager">
+    <configuration name="CreateAirportDatabaseMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rentasad.tools.airportsDatabase.CreateAirportDatabaseMain" />
+      <module name="rentasad.tools.airportsDatabase" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rentasad.tools.airportsDatabase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CreateAirportDatabaseMain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6548c6c8-cec8-4f09-8565-81f49065e6dc" name="Changes" comment="" />
+      <created>1776018875874</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776018875874</updated>
+      <workItem from="1776018878212" duration="86000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

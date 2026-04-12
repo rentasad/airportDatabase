@@ -1,0 +1,2 @@
+"id","filename","ident","name","type","frequency_khz","latitude_deg","longitude_deg","elevation_ft","iso_country","dme_frequency_khz","dme_channel","dme_latitude_deg","dme_longitude_deg","dme_elevation_ft","slaved_variation_deg","magnetic_variation_deg","usageType","power","associated_airport"
+90270,"Leipzig_South_DME_DE","LED","Leipzig South","DME",112150,51.41130065917969,12.223799705505371,502,"DE",112150,"058Y",,,,,1.493,"TERMINAL","LOW","EDDP"

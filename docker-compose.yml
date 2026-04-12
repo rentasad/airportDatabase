@@ -1,6 +1,6 @@
 services:
   db:
-    image: mariadb:10.3
+    image: mariadb:12.2.2
     restart: always
     ports:
       - 3306:3306
@@ -21,7 +21,10 @@ services:
      image: maven:3.8-openjdk-17-slim
 
      volumes:
-      - ./java:/usr/src/airportDatabaseCreator
+      - ./src:/usr/src/airportDatabaseCreator/src
+      - ./pom.xml:/usr/src/airportDatabaseCreator/pom.xml
+      - ./resources:/usr/src/airportDatabaseCreator/resources
+      - ./out:/usr/src/airportDatabaseCreator/out
       - ./maven-repo:/root/.m2
      working_dir: /usr/src/airportDatabaseCreator
      command: mvn compile exec:java

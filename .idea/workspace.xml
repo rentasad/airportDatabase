@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6548c6c8-cec8-4f09-8565-81f49065e6dc" name="Changes" comment="Update and enhance README: clarify project structure, setup instructions, and usage with Docker Compose">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/library/basicTools/AbstractLoggingListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rentasad/library/basicTools/AbstractLoggingListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/library/basicTools/DownloadAirportFilesModul.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/library/basicTools/FileDownloader.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rentasad/library/basicTools/FileDownloader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/library/configFileTool/AbstractLoggingListener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/library/configFileTool/ConfigFileTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rentasad/library/configFileTool/ConfigFileTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/library/configFileTool/ConfigFileToolException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rentasad/library/configFileTool/ConfigFileToolException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/library/configFileTool/TokenNotFoundExeception.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/AirportDatabaseTool.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/AirportDatabaseTool.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/AirportImportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/AirportImportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/CreateAirportDatabaseMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/CreateAirportDatabaseMain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/ParseAirportCsvFilesModul.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/model/AirportFrequenciesObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/model/AirportsObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/model/CountriesObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/model/NavaidsObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/model/RegionsObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/rentasad/tools/airportsDatabase/model/RunwaysObject.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/rentasad/tools/airportsDatabase/ParseAirportCsvFilesModulTest.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="1587" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
+  <component name="ProjectId" id="3CGjbsL6CojUI80u1jP2tA0aFXm" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.CreateAirportDatabaseMain.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in rentasad.tools.airportsDatabase (1).executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.All in rentasad.tools.airportsDatabase.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;refactoring/new__structure&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;to.speed.mode.migration.done&quot;: &quot;true&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="JUnit.All in rentasad.tools.airportsDatabase (1)">
+    <configuration name="CreateAirportDatabaseMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rentasad.tools.airportsDatabase.CreateAirportDatabaseMain" />
+      <module name="rentasad.tools.airportsDatabase" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rentasad.tools.airportsDatabase.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in rentasad.tools.airportsDatabase (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rentasad.tools.airportsDatabase" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in rentasad.tools.airportsDatabase" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="rentasad.tools.airportsDatabase" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.All in rentasad.tools.airportsDatabase (1)" />
+        <item itemvalue="JUnit.All in rentasad.tools.airportsDatabase" />
+        <item itemvalue="Application.CreateAirportDatabaseMain" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6548c6c8-cec8-4f09-8565-81f49065e6dc" name="Changes" comment="" />
+      <created>1776018875874</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776018875874</updated>
+      <workItem from="1776018878212" duration="2690000" />
+      <workItem from="1776021609857" duration="370000" />
+      <workItem from="1776022008549" duration="28000" />
+      <workItem from="1776022135519" duration="444000" />
+    </task>
+    <task id="LOCAL-00001" summary="Move java folder in root for better integration in Intellij IDE (native maven support)">
+      <option name="closed" value="true" />
+      <created>1776019219502</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776019219503</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Remove IntelliJ and Eclipse project configuration files from `bak` directory">
+      <option name="closed" value="true" />
+      <created>1776019246962</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1776019246962</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Restructure project: move `docker-compose.yml` to `docker` directory and clean up obsolete files">
+      <option name="closed" value="true" />
+      <created>1776019764818</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1776019764818</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Update and enhance README: clarify project structure, setup instructions, and usage with Docker Compose">
+      <option name="closed" value="true" />
+      <created>1776019958760</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1776019958760</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Move java folder in root for better integration in Intellij IDE (native maven support)" />
+    <MESSAGE value="Remove IntelliJ and Eclipse project configuration files from `bak` directory" />
+    <MESSAGE value="Restructure project: move `docker-compose.yml` to `docker` directory and clean up obsolete files" />
+    <MESSAGE value="Update and enhance README: clarify project structure, setup instructions, and usage with Docker Compose" />
+    <option name="LAST_COMMIT_MESSAGE" value="Update and enhance README: clarify project structure, setup instructions, and usage with Docker Compose" />
+  </component>
+</project>

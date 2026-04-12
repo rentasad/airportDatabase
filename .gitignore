@@ -1,3 +1,4 @@
 /target/
 maven-repo/*
-java/target/
+target/
+download/
